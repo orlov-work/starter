@@ -1,13 +1,10 @@
 {
-  "name": "evico2",
+  "name": "starter-back",
   "version": "0.0.0",
   "scripts": {
     "start": "nodemon src/server.js --exec babel-node",
     "build": "npm run lint && babel src -d dist",
     "serve": "node dist/server.js",
-    "db:migrate": "knex migrate:latest --knexfile ./knex/knexfile.js",
-    "db:rollback": "knex migrate:rollback --knexfile ./knex/knexfile.js",
-    "db:seed": "knex seed:run --knexfile ./knex/knexfile.js",
     "lint": "eslint src"
   },
   "dependencies": {
@@ -16,11 +13,7 @@
     "config": "^1.30.0",
     "elasticsearch": "^14.2.2",
     "express": "^4.16.2",
-    "knex": "^0.14.6",
-    "libaio": "^1.0.3",
-    "lodash": "^4.17.10",
-    "oracle": "^0.4.1",
-    "oracledb": "^2.2.0"
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
