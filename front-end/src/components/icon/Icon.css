@@ -1,0 +1,33 @@
+@import '../../assets/css/colors.css';
+
+.common {
+  display: inline-block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.dark {
+  color: var(--black);
+}
+
+.dark-sky-blue {
+  color: var(--dark-sky-blue);
+}
+
+.trinidad-red {
+  color: var(--trinidad-red);
+}
+
+.dusty-gray {
+  color: var(--dusty-gray);
+}
+
+.greyish-brown {
+  color: var(--greyish-brown);
+}
+
+.boulder-gray {
+  color: var(--boulder-gray);
+}

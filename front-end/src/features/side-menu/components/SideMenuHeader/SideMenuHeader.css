@@ -1,0 +1,10 @@
+:root {
+  --side-menu-height: 74px;
+}
+
+.common {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--side-menu-height);
+}

@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+
+# build
+dist
+
+# build for test
+_dist
+
+# IDE files
+.idea
+
+# Logs
+*.log
+
+# Mac
+.DS_Store
+
+# nyc
+.nyc_output
+coverage

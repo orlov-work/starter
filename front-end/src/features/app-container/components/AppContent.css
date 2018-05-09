@@ -1,0 +1,11 @@
+@import '../../../assets/css/constant.css';
+
+.app-content {
+  padding-left: var(--collapse-menu-width);
+  transition: padding-left 0.5s;
+}
+
+.app-content-full {
+  composes: app-content;
+  padding-left: var(--expand-menu-width);
+}

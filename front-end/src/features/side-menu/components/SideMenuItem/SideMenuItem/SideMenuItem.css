@@ -1,0 +1,17 @@
+@import '../../../../../assets/css/colors.css';
+@import '../../../../../components/badge/Badge.css';
+@import '../generic-item.css';
+
+.content--dark-sky-blue {
+  color: var(--dark-sky-blue);
+}
+
+.selected > .content-container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--dark-sky-blue);
+  content: "";
+}

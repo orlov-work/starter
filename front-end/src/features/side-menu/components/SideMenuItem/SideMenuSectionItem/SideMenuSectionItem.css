@@ -1,0 +1,23 @@
+@import '../../../../../assets/css/colors.css';
+@import '../generic-item.css';
+
+.item {
+  position: relative;
+  border-top: solid 1px var(--mercury-gray);
+  border-bottom: solid 1px var(--mercury-gray);
+}
+
+.label--bold {
+  composes: label;
+  font-weight: 800;
+}
+
+.content--dark-sky-blue {
+  color: var(--dark-sky-blue);
+}
+
+.right-arrow--down {
+  composes: right-content;
+  top: -5px;
+  transform: rotate(90deg);
+}

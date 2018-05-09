@@ -1,0 +1,22 @@
+.tooltip-wrapper {
+  position: relative;
+  display: initial;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  z-index: 1001;
+  width: 0;
+  height: 0;
+}

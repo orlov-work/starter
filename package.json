@@ -1,0 +1,27 @@
+{
+  "name": "starter",
+  "version": "0.0.1",
+  "description": "STARTER",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:front && npm run test:back",
+    "test:front": "cd front-end && npm run test",
+    "test:back": "cd back-end && npm run test",
+    "lint:back": "cd back-end && npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "",
+      "commit-msg": "./githooks/commit-msg"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "husky": "^1.0.0-rc.1"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}

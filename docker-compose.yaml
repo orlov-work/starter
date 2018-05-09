@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+
+  db:
+    build:
+     context: .
+     dockerfile: Dockerfile.db
+    image: starter-db:dev-${GIT_COMMIT:-latest}
+    environment:
+      - DB_SYS_PASSWORD=startertest
+      - DB_USER=startertest
+      - DB_PASSWORD=startertest
+    ports:
+      - "3306:3306"
+
+  elasticsearch:
+    image: elasticsearch
+    ports:
+      - "9001:9001"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: starter-frontend:dev-${GIT_COMMIT:-latest}
+    command: npm run start
+    volumes:
+      - ./front-end:/src/front-end
+      - /src/front-end/node_modules
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+      - PUBLIC_DEV=dev.starter.com:80
+    ports:
+      - "3001:3001"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: starter-backend:dev-${GIT_COMMIT:-latest}
+    depends_on:
+      - db
+      - elasticsearch
+    links:
+      - db:starterdb
+      - elasticsearch:elasticsearch
+    command: npm run start
+    volumes:
+      - ./back-end:/src/back-end
+      - /src/back-end/node_modules
+    environment:
+      - PORT=3002
+      - DB_HOST=starterdb
+      - DB_PORT=3306
+      - DB_USER=startertest
+      - DB_PASSWORD=startertest
+    ports:
+      - "3002:3002"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    image: starter-nginx:dev-${GIT_COMMIT:-latest}
+    depends_on:
+      - frontend
+      - backend
+      - elasticsearch
+    ports:
+      - "80:80"

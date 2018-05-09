@@ -1,0 +1,5 @@
+dist
+test
+
+*.test.js
+*.story.js

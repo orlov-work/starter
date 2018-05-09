@@ -1,0 +1,14 @@
+@import '../../assets/css/colors.css';
+
+.badge {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3px;
+  background: var(--dark-sky-blue);
+  color: var(--white);
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1;
+}

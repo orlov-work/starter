@@ -1,0 +1,11 @@
+FROM node:alpine
+
+EXPOSE 3002
+
+WORKDIR /src/back-end
+
+COPY back-end/package.json .
+
+RUN npm install
+
+COPY back-end/ /src/back-end/

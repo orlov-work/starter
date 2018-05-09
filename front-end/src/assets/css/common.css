@@ -1,0 +1,24 @@
+:global .evico-frontend {
+  position: relative;
+  display: block;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: VoltaModernDisplay-55Roman, sans-serif;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 13px;
+  font-family: VoltaModernDisplay-55Roman;
+}

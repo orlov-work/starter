@@ -1,0 +1,51 @@
+@import '/../../../../assets/css/colors.css';
+
+:root {
+  --item-height: 40px;
+}
+
+.item {
+  position: relative;
+  color: var(--mine-shaft-gray);
+}
+
+.item:hover {
+  color: var(--black);
+}
+
+.content-container {
+  display: flex;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.left-content {
+  min-width: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  height: var(--item-height);
+  opacity: 1;
+  transition: opacity 0.2s 0.2s;
+}
+
+.content--hide {
+  composes: content;
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.right-content {
+  position: absolute;
+  top: 0;
+  right: 12px;
+}
+
+.label {
+  margin-left: 20px;
+}

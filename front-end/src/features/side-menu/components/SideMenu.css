@@ -1,0 +1,28 @@
+@import '../../../assets/css/constant.css';
+
+:root {
+  --svg-collor: 'red';
+}
+
+.common {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 400;
+  width: var(--expand-menu-width);
+  box-shadow: 2px 0 0 #e5e5e5;
+  color: var(--svg-collor);
+  transition: width 0.2s;
+}
+
+.collapsed {
+  composes: common;
+  width: var(--collapse-menu-width);
+}
+
+.items {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
