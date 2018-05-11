@@ -5,7 +5,7 @@ const exec = require('child_process').execSync;
 
 const REQUIRED_BRANCHES = ['master', 'develop', 'test', 'temp'];
 const BRANCH_PATTERN = /^S-[0-9]{1,4}/;
-
+console.log(123);
 const branchName = exec('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).split('\n')[0].trim();
 const messageFile = process.env.HUSKY_GIT_PARAMS;
 const message = fs.readFileSync(messageFile, 'utf8').trim();
