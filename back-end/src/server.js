@@ -22,5 +22,5 @@ app.use(notFoundMiddleware);
 app.use(errorMiddleware);
 
 initControllers(router);
-
+console.log(port);
 app.listen(port);
