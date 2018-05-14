@@ -13,6 +13,6 @@ module.exports = {
     maxFiles: '14d'
   },
   morgan: {
-    logFormat: ' -- :method :remote-addr :url :status :res[content-length] - :response-time ms'
+    logFormat: 'REQUEST -- :method :remote-addr :url :status :res[content-length] - :response-time ms'
   }
 };
