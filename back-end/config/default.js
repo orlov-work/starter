@@ -1,17 +1,18 @@
-const {
-  PORT,
-  ORACLE_USER,
-  ORACLE_PASSWORD,
-  ORACLE_HOST,
-  ORACLE_PORT,
-  ORACLE_SID
-} = process.env;
+import projectDir from '../src/helpers/projectDir';
+
+const { PORT, LOG_LEVEL } = process.env;
 
 module.exports = {
-  port: process.env.PORT,
-  oracle: {
-    user: ORACLE_USER,
-    password: ORACLE_PASSWORD,
-    connectString: `${ORACLE_HOST}:${ORACLE_PORT}/${ORACLE_SID}`
+  port: PORT || '3000',
+  winston: {
+    logLevel: LOG_LEVEL || 'info',
+    dirname: `${projectDir}/log`,
+    filename: '%DATE%.log',
+    datePattern: 'YYYY-MM-DD',
+    maxSize: '5m',
+    maxFiles: '14d'
+  },
+  morgan: {
+    logFormat: ' -- :method :remote-addr :url :status :res[content-length] - :response-time ms'
   }
 };

@@ -11,6 +11,7 @@ _dist
 .idea
 
 # Logs
+.audit.json
 *.log
 
 # Mac
