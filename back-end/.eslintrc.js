@@ -9,7 +9,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { 'devDependencies': true }],
     'indent': ['error', 2, {'SwitchCase': 1}],
     'max-len': ['error', 120],
-    'newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 1 }],
+    'newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 2 }],
     'no-inline-comments': ['error'],
     'no-param-reassign': ["error", { "props": false }],
     'no-underscore-dangle': 'off',
