@@ -1,5 +1,5 @@
 /* eslint no-unused-vars: 0 */
-import Controller, { VERB } from '../core/Controller';
+import Controller, { VERB } from './Controller';
 // import Error from '../core/Error';
 /**
  * IdentityController

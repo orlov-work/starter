@@ -32,4 +32,4 @@ app.use(errorMiddleware);
 
 initControllers(router);
 
-app.listen(port, () => logger.info('Server start on port: ', port));
+app.listen(port, () => logger.('Server start on port: ', port));

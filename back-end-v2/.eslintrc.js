@@ -1,29 +1,22 @@
 module.exports = {
-  'plugins': ['react'],
-  'extends': ['airbnb'],
-  'settings': {
-    'react': {
-      'pragma': 'React',
-      'version': '15.0'
-    }
-  },
+  'plugins': [],
+  "extends": "standard",
   'rules': {
+    'array-bracket-spacing': 'off',
+    'class-methods-use-this': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'comma-dangle': ['error', 'never'],
     'import/no-extraneous-dependencies': ['error', { 'devDependencies': true }],
+    'import/no-dynamic-require': 0,
+    "global-require": 0,
     'indent': ['error', 2, {'SwitchCase': 1}],
-    'jsx-a11y/no-static-element-interactions': 'off',
     'max-len': ['error', 120],
-    'newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 3 }],
+    'newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 2 }],
     'no-inline-comments': ['error'],
     'no-param-reassign': ["error", { "props": false }],
     'no-underscore-dangle': 'off',
     'operator-linebreak': ['error', 'before'],
     'prefer-arrow-callback': ['error', { 'allowNamedFunctions': true }],
-    'react/jsx-boolean-value': ['off'],
-    'react/jsx-closing-bracket-location': [2, { 'selfClosing': 'after-props', 'nonEmpty': 'after-props' }],
-    'react/jsx-filename-extension': [ 1, { 'extensions': ['.js', '.jsx'] } ],
-    'react/forbid-prop-types': 'off',
     'require-jsdoc': ['error', {
       'require': {
         'FunctionDeclaration': true,
@@ -32,10 +25,7 @@ module.exports = {
         'ArrowFunctionExpression': true
       }
     }],
-    'react/prefer-es6-class': ['error', 'always'],
     'semi': ['error', 'always'],
-    'jsx-a11y/anchor-is-valid': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
     'no-shadow': 'off',
     'import/prefer-default-export': 'off'
   },
@@ -56,8 +46,7 @@ module.exports = {
     'sourceType': 'module',
     'ecmaFeatures': {
       'modules': true,
-      'experimentalObjectRestSpread': true,
-      'jsx': true
+      'experimentalObjectRestSpread': true
     }
   }
 };

@@ -1,0 +1,8 @@
+{
+  "DIRECTORY": "logs",
+  "FILE_NAME": "%DATE%.log",
+  "DATE_PATTERN": "YYYY-MM-DD",
+  "CLEAR_EACH": "7d",
+  "MAX_SIZE": "10m",
+  "LOG_FORMAT": "REQUEST -- :method :remote-addr :url :status :res[content-length] - :response-time ms"
+}

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const exec = require('child_process').execSync;
 
-const REQUIRED_BRANCHES = ['master', 'develop', 'test', 'temp'];
+const REQUIRED_BRANCHES = ['test', 'temp'];
 const BRANCH_PATTERN = /^S-[0-9]{1,4}/;
 
 const branchName = exec('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).split('\n')[0].trim();
@@ -15,8 +15,10 @@ const message = fs.readFileSync(messageFile, 'utf8').trim();
  * @param currentBranch
  * @returns {function(*): undefined}
  */
-const exitForRequiredBranches = currentBranch => branch => branch === currentBranch ? process.exit(0) : undefined;
-REQUIRED_BRANCHES.forEach(exitForRequiredBranches(branchName));
+const exitIfRequiredBranch = currentBranch => branch => {
+  if (branch === currentBranch) process.exit(0);
+};
+REQUIRED_BRANCHES.forEach(exitIfRequiredBranch(branchName));
 
 /**
  * get standartize tag for branch and commit
@@ -37,12 +39,12 @@ const JIRA_TAG = getJiraTag(branchName);
 const commitIncludeBranchName = str => str.match(BRANCH_PATTERN);
 
 
-if(!JIRA_TAG) {
-  console.log('Commit hook rejected: Branch name must be "SPS-[JIRA Number]_[Message]"');
+if (!JIRA_TAG) {
+  console.log('Commit hook rejected: Branch name must be "S-[JIRA Number]_[Message]"');
   process.exit(1);
 }
 
-if(!commitIncludeBranchName(message)) {
+if (!commitIncludeBranchName(message)) {
   const messageLines = message.split('\n');
   messageLines[0] = `${JIRA_TAG} ${message}`;
   fs.writeFileSync(messageFile, messageLines.join('\n'), { encoding: 'utf-8' });

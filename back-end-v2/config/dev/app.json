@@ -1,0 +1,6 @@
+{
+  "APP_NAME": "Starter",
+  "PORT": 3003,
+  "SOURCE_DIR": "src",
+  "JSON_LIMIT": "4mb"
+}
