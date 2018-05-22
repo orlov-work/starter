@@ -5,7 +5,6 @@ import { sideMenuReducer } from '../../features/side-menu';
 import identity from './identity';
 import users from './users';
 
-
 export default combineReducers({
   router,
   identity,
